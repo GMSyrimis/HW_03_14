@@ -5,28 +5,21 @@ import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 import java.io.PrintWriter;
 
-public class Main {
-
+public class RapGame {
+/* I need a timer so the user is pressured into writing some sort of rhyme
+* Display total score and put an upper limit for prizes
+* */
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-	    Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         PrintWriter writer = new PrintWriter("rapgame.txt","UTF-8");
-        String lineA;
-        String lineB;
 
-        String rhymeA3;
-        String rhymeA2;
-        String rhymeA1;
 
         String rhymeB3;
         String rhymeB2;
         String rhymeB1;
 
-        int lineLengthA;
         int lineLengthB;
 
-        int lineA_LastThree;
-        int lineA_LastTwo;
-        int lineA_LastOne;
 
         int lineB_LastThree;
         int lineB_LastTwo;
@@ -44,23 +37,34 @@ public class Main {
         System.out.println("FO REAL!!! So LISTEN UP!!!");
         System.out.println("");
         System.out.println("You get points for every rhyme you write.");
-        System.out.println("");
         System.out.println("Struggling to get enough for a brand new mic. ");
         System.out.println("Check it.");
+        System.out.println("");
         System.out.println("Your turn now. Write two lines that rhyme at the end.");
 
         while (totalScore>-50) {
 
-            lineA=keyboard.nextLine();
-            lineB=keyboard.nextLine();
+            String lineA=keyboard.nextLine();
+            String lineB=keyboard.nextLine();
 
-            lineLengthA=lineA.length();
-            lineA_LastThree=lineLengthA - 3;
-            lineA_LastTwo=lineLengthA-2;
-            lineA_LastOne=lineLengthA-1;
-            rhymeA3=lineA.substring(lineA_LastThree);
-            rhymeA2=lineA.substring(lineA_LastTwo);
-            rhymeA1=lineA.substring(lineA_LastOne);
+            /* lineA.contains("ay"); */
+            
+            int lineLengthA=lineA.length();
+            if(lineLengthA-3>=0) {
+                int lineA_LastThree = lineLengthA - 3;
+                String rhymeA3=lineA.substring(lineA_LastThree);
+            }
+            if(lineLengthA-2>=0) {
+                int lineA_LastTwo = lineLengthA - 2;
+                String rhymeA2=lineA.substring(lineA_LastTwo);
+            }
+            if(lineLengthA-1>=0) {
+                int lineA_LastTwo = lineLengthA - 1;
+                String rhymeA1=lineA.substring(lineA_LastOne);
+            }
+
+
+
 
             lineLengthB=lineB.length();
             lineB_LastThree=lineLengthB - 3;

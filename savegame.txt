@@ -1,0 +1,5 @@
+points 6100
+hasProducer true
+hasRecordDeal false
+hasMansion false
+hasPrivateJet false
