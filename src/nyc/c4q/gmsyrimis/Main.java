@@ -15,56 +15,50 @@ public class Main {
         //Need to find a way to remember the tools I initiate.
         Scanner keyboard = new Scanner(System.in);
         PrintWriter writer = new PrintWriter("rapgame.txt","UTF-8");
-
+        // this was a savegame feature idea...
+        int totalScore=0;
+        //never interupt the system out flow, it confuses people
 // an attempt to capture rhymes. a lot learned, should find a way to pace through code in a timeframe.
 
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("                          THE  RAPGAME  ");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("This rap game, this rap game,\n" +
-                "I ain't sell'in my soul for this rap game,\n" +
-                "Now I ain't digg'in no hole for this rap game,\n" +
-                "But I'm tellin ya no it ain't happenin..\n" +
-                "\n" +
-                "This rap game, this rap game,\n" +
-                "I ain't sell'in my soul for this rap game,\n" +
-                "I ain't digg'in no hole for this rap game,\n" +
-                "This rap game, this rap game...");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("__________________________________________________________________");
-        System.out.println("_                                                                _");
-        System.out.println("_  CHECK IT!                                                     _");
-        System.out.println("_                                                                _");
-        System.out.println("_                                                                _");
-        System.out.println("_  (the mic gets passed over to you)                             _");
-        System.out.println("_ Write something that rhymes at the last 3 letters:             _");
-
-
-        /*--------------------------------------------------------------------------------------*/
-        /*             I don't understand methods just enough yet.                              */
-
-
-        int totalScore=0;
-        //When you start the game you have 0 score.
-
             System.out.println("");
-            System.out.println(totalScore+"points");
+            System.out.println("                          THE  RAPGAME  ");
+            System.out.println("");
+            System.out.println("This rap game, this rap game,\n" +
+                    "I ain't sell'in my soul for this rap game,\n" +
+                    "Now I ain't digg'in no hole for this rap game,\n" +
+                    "But I'm tellin ya no it ain't happenin..\n" +
+                    "\n" +
+                    "This rap game, this rap game,\n" +
+                    "I ain't sell'in my soul for this rap game,\n" +
+                    "I ain't digg'in no hole for this rap game,\n" +
+                    "This rap game, this rap game...");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("__________________________________________________________________");
+            System.out.println("_                                                                _");
+            System.out.println("_  CHECK IT!                                                     _");
+            System.out.println("_                                                                _");
+            System.out.println("_                                                                _");
+            System.out.println("_  (the mic gets passed over to you)                             _");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("You need write two lines that rhyme and have the last 1, 2 or 3 characters of the string the same.");
+            System.out.println("I wanted you to experience more but this is pre-Alpha.");
+            System.out.println("");
+            System.out.println("You start with: " + totalScore + "points");
             System.out.println("As long as you don't go 30 below, you don't loose.");
-
+        System.out.println("Options:");
+        System.out.println("RHYMEBOOK | STORE | EXIT");
+        //Need to add functionality to keywords
+//THIS IS WHERE MY GAME STARTS
 
         while (totalScore>-30) {
             //keep user input close to the beginning of the code branch. Know that it's always here.
             String lineA=keyboard.nextLine();
             String lineB=keyboard.nextLine();
-
+            if(lineA.equals("EXIT")){
+                break;
+            }
             // here are the scores for each rhyme length
                 int score3=5;
                 int score2=2;
@@ -118,7 +112,7 @@ public class Main {
                         System.out.println("I don't know maybe I'm just too stupid to get it, but that's -10 points.");
                         System.out.println("");
                 }
-            
+
    /* ------END OF VERY LONG IF BRANCH CHECKING THE EQUALITY BETWEEN RHYME A AND RHYME B FROM THE TWO LINES */
 
         }
