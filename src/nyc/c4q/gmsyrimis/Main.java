@@ -5,39 +5,16 @@ import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 import java.io.PrintWriter;
 
+
+/* This should be like the main menu */
+
+
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-	    Scanner keyboard = new Scanner(System.in);
-
+        //Need to find a way to remember the tools I initiate.
+        Scanner keyboard = new Scanner(System.in);
         PrintWriter writer = new PrintWriter("rapgame.txt","UTF-8");
-        String lineA;
-        String lineB;
-
-        String rhymeA3;
-        String rhymeA2;
-        String rhymeA1;
-
-        String rhymeB3;
-        String rhymeB2;
-        String rhymeB1;
-
-        int lineLengthA;
-        int lineLengthB;
-
-        int lineA_LastThree;
-        int lineA_LastTwo;
-        int lineA_LastOne;
-
-        int lineB_LastThree;
-        int lineB_LastTwo;
-        int lineB_LastOne;
-
-        int score3=10;
-        int score2=7;
-        int score1=4;
-
-        int totalScore=0;
 
 // an attempt to capture rhymes. a lot learned, should find a way to pace through code in a timeframe.
 
@@ -63,63 +40,91 @@ public class Main {
         System.out.println("");
         System.out.println("");
         System.out.println("__________________________________________________________________");
-
         System.out.println("_                                                                _");
         System.out.println("_  CHECK IT!                                                     _");
         System.out.println("_                                                                _");
         System.out.println("_                                                                _");
         System.out.println("_  (the mic gets passed over to you)                             _");
-        System.out.println("_                                                                _");
-        keyboard
-        System.out.println("_                                                                _");
-        System.out.println("_                                                                _");
-        while (totalScore>-50) {
-
-            lineA=keyboard.nextLine();
-            lineB=keyboard.nextLine();
-
-            lineLengthA=lineA.length();
-            lineA_LastThree=lineLengthA - 3;
-            lineA_LastTwo=lineLengthA-2;
-            lineA_LastOne=lineLengthA-1;
-            rhymeA3=lineA.substring(lineA_LastThree);
-            rhymeA2=lineA.substring(lineA_LastTwo);
-            rhymeA1=lineA.substring(lineA_LastOne);
-
-            lineLengthB=lineB.length();
-            lineB_LastThree=lineLengthB - 3;
-            lineB_LastTwo=lineLengthB - 2;
-            lineB_LastOne=lineLengthB - 1;
-            rhymeB3=lineB.substring(lineB_LastThree);
-            rhymeB2=lineB.substring(lineB_LastTwo);
-            rhymeB1=lineB.substring(lineB_LastOne);
-
-            if (rhymeA3.equalsIgnoreCase(rhymeB3)) {
-                totalScore=totalScore+score3;
-                System.out.println("Cool you just scored " + score3 + " points.");
-                writer.println(lineA);
-                writer.println(lineB);
-            } else if(rhymeA2.equalsIgnoreCase(rhymeB2)) {
-                totalScore=totalScore+score2;
-                System.out.println("Aight, aight, no doubt. That's a good try "+score2+" points.");
-                writer.println(lineA);
-                writer.println(lineB);
-            }else if(rhymeA1.equalsIgnoreCase(rhymeB1)){
-                totalScore=totalScore+score1;
-                System.out.println("DAMN DAWG... one letter? pssshhh, you'll definitely need to do better than that.");
-                System.out.println("Notice the last 3 characters in your input");
-                System.out.println(score1+" points for the effort.");
+        System.out.println("_ Write something that rhymes at the last 3 letters:             _");
 
 
-                writer.println(lineA);
-                writer.println(lineB);
-            }else{
-                totalScore=totalScore-10;
-                System.out.println("I don't know if I'm just too stupid to get it, but that's -10 points.");
-                writer.println(lineA);
-                writer.println(lineB);
-            }
+        /*--------------------------------------------------------------------------------------*/
+        /*             I don't understand methods just enough yet.                              */
+
+
+        int totalScore=0;
+        //When you start the game you have 0 score.
+
+            System.out.println("");
+            System.out.println(totalScore+"points");
+            System.out.println("As long as you don't go 30 below, you don't loose.");
+
+
+        while (totalScore>-30) {
+            //keep user input close to the beginning of the code branch. Know that it's always here.
+            String lineA=keyboard.nextLine();
+            String lineB=keyboard.nextLine();
+
+            // here are the scores for each rhyme length
+                int score3=5;
+                int score2=2;
+                int score1=1;
+            // Line A computations. Maybe method?
+                int lineLengthA=lineA.length();
+                int lineA_LastThree=lineLengthA - 3;
+                int lineA_LastTwo=lineLengthA-2;
+                int lineA_LastOne=lineLengthA-1;
+                String rhymeA3=lineA.substring(lineA_LastThree);
+                String rhymeA2=lineA.substring(lineA_LastTwo);
+                String rhymeA1=lineA.substring(lineA_LastOne);
+            //Line B computations call Method?
+                int lineLengthB=lineB.length();
+                int lineB_LastThree=lineLengthB - 3;
+                int lineB_LastTwo=lineLengthB - 2;
+                int lineB_LastOne=lineLengthB - 1;
+                String rhymeB3=lineB.substring(lineB_LastThree);
+                String rhymeB2=lineB.substring(lineB_LastTwo);
+                String rhymeB1=lineB.substring(lineB_LastOne);
+            // Rhyme operations
+                if (rhymeA3.equalsIgnoreCase(rhymeB3)) {
+                    writer.println(lineA);
+                    writer.println(lineB);
+                    totalScore=totalScore+score3;
+                        System.out.println("");
+                        System.out.println("Cool you just scored " + score3 + " points.");
+                        System.out.println("");
+                }
+                else if(rhymeA2.equalsIgnoreCase(rhymeB2)) {
+                    totalScore=totalScore+score2;
+                    writer.println(lineA);
+                    writer.println(lineB);
+                        System.out.println("");
+                        System.out.println("Aight, aight, no doubt. That's a good try "+score2+" points.");
+                        System.out.println("");
+                }
+                else if(rhymeA1.equalsIgnoreCase(rhymeB1)){
+                    totalScore = totalScore + score1;
+                    writer.println(lineA);
+                    writer.println(lineB);
+                        System.out.println("");
+                        System.out.println("hey, hey, remember the last 3 characters of your input");
+                        System.out.println( score1 + " I'm sorry I have to do this, you may have written an awesome line, but I can't pick everything up yet.");
+                }
+                else{
+                    totalScore=totalScore-10;
+                    writer.println(lineA);
+                    writer.println(lineB);
+                        System.out.println("");
+                        System.out.println("I don't know maybe I'm just too stupid to get it, but that's -10 points.");
+                        System.out.println("");
+                }
+            
+   /* ------END OF VERY LONG IF BRANCH CHECKING THE EQUALITY BETWEEN RHYME A AND RHYME B FROM THE TWO LINES */
+
         }
+
+        //----------END WHILE
+
         writer.close();
         System.out.println("You've got to do better than that.");
         System.out.println("GAME OVER");
