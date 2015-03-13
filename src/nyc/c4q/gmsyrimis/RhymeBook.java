@@ -31,8 +31,8 @@ public class RhymeBook {
 
 
 
-        List<String> rhymes = Files.readAllLines(Paths.get(filename+".txt"), Charset.defaultCharset());
-        PrintWriter writer = new PrintWriter(filename+".txt", "UTF-8");
+        List<String> rhymes = Files.readAllLines(Paths.get(filename+"RhymeBook.txt"), Charset.defaultCharset());
+        PrintWriter writer = new PrintWriter(filename+"RhymeBook.txt", "UTF-8");
         for(String line : rhymes){
             String[] data = line.split(" ");
             int dataLength=data.length;

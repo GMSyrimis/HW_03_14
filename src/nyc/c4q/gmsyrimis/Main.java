@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 	    Scanner keyboard = new Scanner(System.in);
+
         PrintWriter writer = new PrintWriter("rapgame.txt","UTF-8");
         String lineA;
         String lineB;
@@ -38,17 +39,40 @@ public class Main {
 
         int totalScore=0;
 
+// an attempt to capture rhymes. a lot learned, should find a way to pace through code in a timeframe.
 
-        System.out.println("Hey, wassup? My name's G money and I'm here to teach you how to rap like a true MC.");
         System.out.println("");
-        System.out.println("FO REAL!!! So LISTEN UP!!!");
         System.out.println("");
-        System.out.println("You get points for every rhyme you write.");
         System.out.println("");
-        System.out.println("Struggling to get enough for a brand new mic. ");
-        System.out.println("Check it.");
-        System.out.println("Your turn now. Write two lines that rhyme at the end.");
+        System.out.println("                          THE  RAPGAME  ");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("This rap game, this rap game,\n" +
+                "I ain't sell'in my soul for this rap game,\n" +
+                "Now I ain't digg'in no hole for this rap game,\n" +
+                "But I'm tellin ya no it ain't happenin..\n" +
+                "\n" +
+                "This rap game, this rap game,\n" +
+                "I ain't sell'in my soul for this rap game,\n" +
+                "I ain't digg'in no hole for this rap game,\n" +
+                "This rap game, this rap game...");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("__________________________________________________________________");
 
+        System.out.println("_                                                                _");
+        System.out.println("_  CHECK IT!                                                     _");
+        System.out.println("_                                                                _");
+        System.out.println("_                                                                _");
+        System.out.println("_  (the mic gets passed over to you)                             _");
+        System.out.println("_                                                                _");
+        keyboard
+        System.out.println("_                                                                _");
+        System.out.println("_                                                                _");
         while (totalScore>-50) {
 
             lineA=keyboard.nextLine();
@@ -83,7 +107,10 @@ public class Main {
             }else if(rhymeA1.equalsIgnoreCase(rhymeB1)){
                 totalScore=totalScore+score1;
                 System.out.println("DAMN DAWG... one letter? pssshhh, you'll definitely need to do better than that.");
+                System.out.println("Notice the last 3 characters in your input");
                 System.out.println(score1+" points for the effort.");
+
+
                 writer.println(lineA);
                 writer.println(lineB);
             }else{

@@ -1,0 +1,5 @@
+points 9100
+hasFatCap true
+hasBoots true
+hasBaggyJeans true
+hasHoody true
