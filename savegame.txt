@@ -1,5 +1,14 @@
-points 6100
-hasProducer true
+points 0
+max 4
+hasFatCap false
+hasBoots false
+hasBaggyJeans false
+hasHoody false
+hasBoombox false
+hasHeadphones false
+hasMic false
+hasChain false
+hasProducer false
 hasRecordDeal false
 hasMansion false
 hasPrivateJet false

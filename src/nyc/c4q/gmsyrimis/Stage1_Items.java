@@ -13,10 +13,10 @@ import java.io.PrintWriter;
  */
 public class Stage1_Items {
     public static void main(String[] args) throws IOException {
-        //ArrayList of type String that reads all lines of a file and returns a string array.
-        //I wanted to build my rhymebooks and Rhyme Rating Machine with this...
-        List <String> savegame = Files.readAllLines(Paths.get("savegame1.txt"), Charset.defaultCharset());
-        //Savegame feature, We are writing to the file the values of the inventory
+
+
+
+
         //Inventory Defaults:
         int points=10000;
         int max=4;
@@ -24,9 +24,24 @@ public class Stage1_Items {
         boolean hasBoots=false;
         boolean hasBaggyJeans=false;
         boolean hasHoody=false;
+        boolean hasBoombox=false;
+        boolean hasHeadphones=false;
+        boolean hasMic=false;
+        boolean hasChain=false;
+        boolean hasProducer=false;
+        boolean hasRecordDeal=false;
+        boolean hasMansion=false;
+        boolean hasPrivateJet=false;
 
-        //Checking the savegame. Loading...
-        //Loop through each line in savegame
+        /*
+        Checking the savegame. Loading...
+        Loop through each line in savegame
+        ArrayList of type String that reads all lines of a file and returns a string array.
+        I wanted to build my rhymebooks and Rhyme Rating Machine with this...
+        Savegame feature, We are writing to the file the values of the inventory
+        */
+        List <String> savegame = Files.readAllLines(Paths.get("savegame.txt"), Charset.defaultCharset());
+
         for(String line : savegame){
             String[] data = line.split(" ");
                 String variable = data[0];
@@ -82,6 +97,7 @@ public class Stage1_Items {
         //ITEM STORE
         System.out.println("STORE:");
         System.out.println("");
+
         for(int i=1;i<=4;i++) {
             System.out.println("What would you like to buy?");
             System.out.println("Credit: $" + points);
@@ -99,6 +115,9 @@ public class Stage1_Items {
             if (!hasHoody) {
                 System.out.println("Hoody: $300");
             }
+
+//ALL THE OPERATIONS ABOVE END UP GIVING THIS
+
             //USER INPUT IF BRANCH:
             Scanner keyboard=new Scanner(System.in);
             String response = keyboard.nextLine();
@@ -168,13 +187,23 @@ public class Stage1_Items {
         //END OF STORE
 
         //SAVEGAME:
-        PrintWriter writer = new PrintWriter("savegame1.txt", "UTF-8");
+        PrintWriter writer = new PrintWriter("savegame.txt", "UTF-8");
         writer.println("points " +points);
+        writer.println("max "+max);
         writer.println("hasFatCap "+hasFatCap);
         writer.println("hasBoots "+hasBoots);
         writer.println("hasBaggyJeans "+hasBaggyJeans);
         writer.println("hasHoody "+hasHoody);
-        writer.println("max "+max);
+        writer.println("points " +points);
+        writer.println("hasBoombox "+hasBoombox);
+        writer.println("hasHeadphones "+hasHeadphones);
+        writer.println("hasMic "+hasMic);
+        writer.println("hasChain "+hasChain);
+        writer.println("points " +points);
+        writer.println("hasProducer "+hasProducer);
+        writer.println("hasRecordDeal "+hasRecordDeal);
+        writer.println("hasMansion "+hasMansion);
+        writer.println("hasPrivateJet "+hasPrivateJet);
         writer.close();
 
 

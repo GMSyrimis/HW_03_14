@@ -11,7 +11,10 @@ import java.io.PrintWriter;
 
 public class Main {
 
+
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+        
+
         //Need to find a way to remember the tools I initiate.
         Scanner keyboard = new Scanner(System.in);
         PrintWriter writer = new PrintWriter("rapgame.txt","UTF-8");
@@ -59,6 +62,7 @@ public class Main {
             if(lineA.equals("EXIT")){
                 break;
             }
+
             // here are the scores for each rhyme length
                 int score3=5;
                 int score2=2;
