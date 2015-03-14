@@ -13,7 +13,7 @@ public class Main {
 
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        
+
 
         //Need to find a way to remember the tools I initiate.
         Scanner keyboard = new Scanner(System.in);
